@@ -7,9 +7,8 @@ export default function({ attrs: { actions, state } }) {
   
   async function handleClick() {
     actions.incrementCounter()
-    actions.changeName('John Doe')
+    actions.changeName('James Doe')
   }
-
 
   return { view: () => html`
     <div>
@@ -17,6 +16,8 @@ export default function({ attrs: { actions, state } }) {
       <div>
         <button onclick=${handleClick}>Change Name!</button>
       </div>
+
+      ${state.selectedUser && html`<pre>${JSON.stringify(state.selectedUser, null, 2)}</pre>`}
     </div>
   `}
 }
