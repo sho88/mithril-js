@@ -1,11 +1,8 @@
-import htm from "htm";
 import m from "mithril";
 import { asyncify } from "./../utils";
 
-const html = htm.bind(m);
 
-
-export default function UsersComponent({ attrs: { state, actions } }) {
+export default function UsersComponent({ attrs: { state, actions, html } }) {
 
   // properties are declared here...
   let loading = false
@@ -27,16 +24,17 @@ export default function UsersComponent({ attrs: { state, actions } }) {
       return
     }
 
-    actions.addUsers( response )
+    actions.addUsers(response)
     loading = false
   }
 
   // event handlers...
   async function handleClick(user) {
-    actions.setSelectedUser( user )
+    actions.setSelectedUser(user)
   }
 
-  return { oninit, view: () => html`
+  return {
+    oninit, view: () => html`
     <div>
       <ul>
         ${state.users.map(user => html`
