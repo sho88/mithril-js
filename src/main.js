@@ -5,7 +5,7 @@ import { Actions, State } from "./actions"
 // this supports both sass and scss files (see scss/sass module files in the "/src/styles" folder...)
 import './style.sass'
 
-import Wrapper from "./components/wrapper";
+import Wrapper from "./utils/wrapper";
 
 // prepare the htm (HyperText Markup) to be passed into the Wrapper component
 const html = htm.bind(m)

@@ -1,4 +1,4 @@
-import { MithrilClass } from "../components/mithril-class";
+import { MithrilClass } from "../utils/mithril-class";
 
 // @TODO: Maybe revert to the class template being at the bottom?
 export default class ClassComponent extends MithrilClass {
