@@ -1,5 +1,5 @@
 import m from "mithril";
-import UsersComponent from "./../components/users/users.component"
+import UsersComponent from "../components/users"
 import { asyncify } from "./../utils";
 
 

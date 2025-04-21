@@ -1,7 +1,7 @@
 import m from "mithril"
 import htm from "htm"
 
-import usersStyle from "./users.module.scss"
+import usersStyle from "./styles.module.scss"
 
 const html = htm.bind(m)
 
