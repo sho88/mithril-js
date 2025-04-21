@@ -1,12 +1,10 @@
 // @TODO: Move to its correct place
-export const State = () => {
-  return {
-    counter: 0,
-    name: "John Doe",
-    selectedUser: null,
-    users: [],
-  }
-}
+export const State = () => ({
+  counter: 0,
+  name: "John Doe",
+  selectedUser: null,
+  users: [],
+})
 
 export const Actions = state => ({
 
@@ -17,4 +15,5 @@ export const Actions = state => ({
   // for home page...
   changeName: name => state.name = name,
   incrementCounter: () => state.counter = state.counter + 1,
+
 })

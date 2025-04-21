@@ -1,7 +1,9 @@
 import m from "mithril"
 import htm from "htm";
 import { Actions, State } from "./actions"
-// import './style.css'
+
+// this supports both sass and scss files (see scss/sass module files in the "/src/styles" folder...)
+import './style.sass'
 
 import Wrapper from "./components/wrapper";
 

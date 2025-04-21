@@ -1,9 +1,4 @@
-import htm from "htm";
-import m from "mithril";
-
-const html = htm.bind(m);
-
-export default function({ attrs: { actions, state } }) {
+export default function({ attrs: { actions, state, html } }) {
   
   async function handleClick() {
     actions.incrementCounter()
@@ -13,6 +8,7 @@ export default function({ attrs: { actions, state } }) {
   return { view: () => html`
     <div>
       <p>Hello ${state.name}</p>
+
       <div>
         <button onclick=${handleClick}>Change Name!</button>
       </div>
