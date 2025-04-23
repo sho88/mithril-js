@@ -33,8 +33,8 @@ export default function FunctionComponent({ attrs: { state, actions, html } }) {
           <input class="input__field"
             name="name"
             type="text"
-            onchange=${handleChange}
-            value=${name} />
+            value=${name}
+            onchange=${handleChange} />
         </div>
 
         <button class="name__button">Change Name</button>

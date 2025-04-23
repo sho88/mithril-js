@@ -1,4 +1,4 @@
-import { MithrilClass } from "../components/mithril-class";
+import { MithrilClass } from "../utils/mithril-class";
 
 // @TODO: Maybe revert to the class template being at the bottom?
 export default class ClassComponent extends MithrilClass {
@@ -20,10 +20,11 @@ export default class ClassComponent extends MithrilClass {
           </div>
 
           <div>
-            <input class="class__input" name="name"
+            <input class="class__input"
+              name="name"
               type="text"
-              onchange=${ev => this.handleChange(ev)}
-              value="${this.fullName}" />
+              value="${this.fullName}" 
+              onchange=${ev => this.handleChange(ev)} />
           </div>
 
           <div>

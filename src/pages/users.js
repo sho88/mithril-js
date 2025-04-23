@@ -1,8 +1,9 @@
 import m from "mithril";
+import UsersComponent from "../components/users"
 import { asyncify } from "./../utils";
 
 
-export default function UsersComponent({ attrs: { state, actions, html } }) {
+export default function UsersPageComponent({ attrs: { actions, state, html } }) {
 
   // properties are declared here...
   let loading = false
@@ -35,21 +36,14 @@ export default function UsersComponent({ attrs: { state, actions, html } }) {
 
   return {
     oninit, view: () => html`
-    <div>
-      <ul>
-        ${state.users.map(user => html`
-          <li>
-            ${user.name}
-            <button onclick=${() => handleClick(user)}>Select</button>
-          </li>
-        `)}
+      <div>
+        ${state.users && html`<${UsersComponent} users=${state.users} whenUserClick=${handleClick} />`}
 
         ${state.selectedUser && html`
           <p>The user you selected is:</p>
           <pre>${JSON.stringify(state.selectedUser, null, 2)}</pre>
         `}
-      </ul>
-    </div>
+      </div>
   ` }
 
 }

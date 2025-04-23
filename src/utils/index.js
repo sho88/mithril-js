@@ -1,7 +1,7 @@
 import htm from "htm";
 import m from "mithril";
 import { Actions, State } from "./../actions"
-import Wrapper from "../components/wrapper";
+import Wrapper from "./../utils/wrapper";
 
 
 export const asyncify = promise => promise.then(data => [null, data]).catch(error => [error]);
