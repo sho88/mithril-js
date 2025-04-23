@@ -1,38 +1,33 @@
 import m from "mithril"
 import htm from "htm";
-import { Actions, State } from "./actions"
+import { bind } from "./utils";
 // import './style.css'
-
-import Wrapper from "./components/wrapper";
 
 // prepare the htm (HyperText Markup) to be passed into the Wrapper component
 const html = htm.bind(m)
 
-// initialise the state and the corresponding actions
-const state = State()
-const actions = Actions(state)
 
 m.route(document.body, '/', {
 
   '/': {
     // lazy load components by default...
-    onmatch: () => import("./pages/home").then(module => Wrapper(module.default)(state, actions, html))
+    onmatch: () => import("./pages/home").then(module => bind(module.default))
   },
 
   '/users': {
-    onmatch: () => import("./pages/users").then(module => Wrapper(module.default)(state, actions, html))
+    onmatch: () => import("./pages/users").then(module => bind(module.default))
   },
 
   '/pojo': {
-    onmatch: () => import("./pages/pojo").then(module => Wrapper(module.default)(state, actions, html))
+    onmatch: () => import("./pages/pojo").then(module => bind(module.default))
   },
 
   '/function': {
-    onmatch: () => import("./pages/function").then(module => Wrapper(module.default)(state, actions, html))
+    onmatch: () => import("./pages/function").then(module => bind(module.default))
   },
 
   '/class': {
-    onmatch: () => import("./pages/class").then(module => Wrapper(module.default)(state, actions, html))
+    onmatch: () => import("./pages/class").then(module => bind(module.default))
   },
 
 })
