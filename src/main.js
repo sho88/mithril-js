@@ -1,11 +1,6 @@
 import m from "mithril"
-import htm from "htm";
 import { bind } from "./utils";
-// import './style.css'
-
-// prepare the htm (HyperText Markup) to be passed into the Wrapper component
-const html = htm.bind(m)
-
+import './style.sass'
 
 m.route(document.body, '/', {
 
@@ -29,5 +24,9 @@ m.route(document.body, '/', {
   '/class': {
     onmatch: () => import("./pages/class").then(module => bind(module.default))
   },
+
+  '/old-school': {
+    onmatch: () => import("./pages/old-school").then(module => bind(module.default))
+  }
 
 })
