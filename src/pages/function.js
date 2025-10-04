@@ -1,3 +1,5 @@
+import m from "mithril";
+
 export default function FunctionComponent({ attrs: { state, actions, html } }) {
 
   // properties go here...
@@ -5,20 +7,21 @@ export default function FunctionComponent({ attrs: { state, actions, html } }) {
 
 
   // hooks go here...
-  async function oninit() {
+  function oninit() {
     name = state.name
   }
 
 
   // events go here...
-  async function handleChange(ev) {
+  function handleChange(ev) {
     name = ev.target.value.trim()
   }
 
-  async function handleSubmit(ev) {
+  function handleSubmit(ev) {
     ev.preventDefault()
 
     actions.changeName(name)
+    m.route.set("/class");
   }
 
 
@@ -32,6 +35,7 @@ export default function FunctionComponent({ attrs: { state, actions, html } }) {
         <div class="input">
           <input class="input__field"
             name="name"
+            style="border: 1px solid black;"
             type="text"
             value=${name}
             onchange=${handleChange} />

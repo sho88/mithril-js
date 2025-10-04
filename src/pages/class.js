@@ -1,3 +1,4 @@
+import m from "mithril";
 import { MithrilClass } from "../utils/mithril-class";
 
 // @TODO: Maybe revert to the class template being at the bottom?
@@ -49,6 +50,7 @@ export default class ClassComponent extends MithrilClass {
   async handleSubmit(ev) {
     ev.preventDefault()
     this.attrs.actions.changeName(this.fullName)
+    m.route.set("/old-school");
   }
 
 }
