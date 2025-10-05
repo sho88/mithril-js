@@ -40,8 +40,10 @@ export default function UsersPageComponent({ attrs: { actions, state, html } }) 
         ${state.users && html`<${UsersComponent} users=${state.users} whenUserClick=${handleClick} />`}
 
         ${state.selectedUser && html`
-          <p>The user you selected is:</p>
-          <pre>${JSON.stringify(state.selectedUser, null, 2)}</pre>
+          <p>
+            The user you selected is: <span class="text-red">${state.selectedUser.name}</span><br />
+            Their email addresss is: <span class="text-red">${state.selectedUser.email}</span>
+          </p>
         `}
       </div>
   ` }

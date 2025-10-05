@@ -9,8 +9,8 @@ const UsersComponent = {
 
   // template rendering goes here...
   view: ({ attrs: { users, whenUserClick, html } }) => html`
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
+    <h1 class="text-3xl font-bold">
+      MithrilJS Boilerplate
     </h1>
 
     <hr />

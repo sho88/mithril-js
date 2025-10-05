@@ -21,7 +21,7 @@ export default function FunctionComponent({ attrs: { state, actions, html } }) {
     ev.preventDefault()
 
     actions.changeName(name)
-    m.route.set("/class");
+    m.route.set("/pojo");
   }
 
 

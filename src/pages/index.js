@@ -10,14 +10,14 @@ const model = {
 const component = {
 
   // events go here...
-  handleClick: function() {
+  handleClick() {
     model.forename = model.forename === "James" ? "John" : "James"
     
     if (model.forename === "James") model.numberOfReversions = model.numberOfReversions + 1;
   },
 
   // utility functions go here...
-  renderFullName: function(currentModel) {
+  renderFullName(currentModel) {
     return `${currentModel.forename}${currentModel.surname ? ' ' + currentModel.surname : ''}`
   },
 

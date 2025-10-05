@@ -4,11 +4,10 @@ import styles from "./../styles/main.module.scss";
 export default function Wrapper(component) {
 
   const links = [
+    { label: "Home", href: "/", icon: "bi bi-house" },
     { label: "Users", href: "/users", icon: "bi bi-people" },
     { label: "Pojo", href: "/pojo", icon: "bi bi-braces" },
     { label: "Function", href: "/function", icon: "bi bi-file-code" },
-    { label: "Class", href: "/class", icon: "bi bi-code-square" },
-    { label: "Old School", href: "/old-school", icon: "bi bi-javascript" },
   ]
 
   // ...then inject it into the component, along with the other attributes

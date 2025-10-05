@@ -5,8 +5,7 @@ import './style.sass'
 m.route(document.body, '/', {
 
   '/': {
-    // lazy load components by default...
-    onmatch: () => import("./pages/home").then(module => bind(module.default))
+    onmatch: () => import("./pages/index").then(module => bind(module.default))
   },
 
   '/users': {
@@ -20,13 +19,5 @@ m.route(document.body, '/', {
   '/function': {
     onmatch: () => import("./pages/function").then(module => bind(module.default))
   },
-
-  '/class': {
-    onmatch: () => import("./pages/class").then(module => bind(module.default))
-  },
-
-  '/old-school': {
-    onmatch: () => import("./pages/old-school").then(module => bind(module.default))
-  }
 
 })
