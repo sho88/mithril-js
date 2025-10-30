@@ -20,4 +20,8 @@ m.route(document.body, '/', {
     onmatch: () => import("./pages/function").then(module => bind(module.default))
   },
 
+  '/state': {
+    onmatch: () => import("./pages/state").then(module => bind(module.default))
+  },
+
 })

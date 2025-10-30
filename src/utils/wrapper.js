@@ -8,6 +8,7 @@ export default function Wrapper(component) {
     { label: "Users", href: "/users", icon: "bi bi-people" },
     { label: "Pojo", href: "/pojo", icon: "bi bi-braces" },
     { label: "Function", href: "/function", icon: "bi bi-file-code" },
+    { label: "State", href: "/state", icon: "bi bi-box" },
   ]
 
   // ...then inject it into the component, along with the other attributes

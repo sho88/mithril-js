@@ -10,6 +10,7 @@ const NavigationComponent = {
         m('li', m(m.route.Link, { href: '/function' }, 'Function')),
         m('li', m(m.route.Link, { href: '/class' }, 'Class')),
         m('li', m(m.route.Link, { href: '/old-school' }, 'Old School')),
+        m('li', m(m.route.Link, { href: '/state' }, 'State')),
       )
     );
   }
