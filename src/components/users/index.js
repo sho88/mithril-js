@@ -1,8 +1,6 @@
 import { bind } from "./../../utils"
 
-// @TODO: Find a way to integrate sass modules with tailwind...
-// import usersStyle from "./styles.module.scss"
-import "./styles.css"
+import usersStyle from "./styles.module.scss"
 
 
 const UsersComponent = {
@@ -15,9 +13,9 @@ const UsersComponent = {
 
     <hr />
 
-    <ul className="list">
+    <ul className=${usersStyle['list']}>
       ${users.map(user => html`
-        <li className="listItem" onclick=${() => whenUserClick(user)}>
+        <li className=${usersStyle['list__item']} onclick=${() => whenUserClick(user)}>
           ${user.name}
         </li>
       `)}

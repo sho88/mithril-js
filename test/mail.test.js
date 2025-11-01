@@ -3,8 +3,28 @@ import { getByText } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import DemoComponent from "../src/components/demo/demo.js";
+import MailComponent from "../src/components/mail/mail";
 
+describe("MailComponent", () => {
+  beforeEach(() => {
+    document.body.innerHTML = "<div id='app'></div>";
+    const container = document.getElementById("app");
+    m.mount(container, MailComponent);
+  });
+
+  afterEach(() => {
+    const container = document.getElementById("app");
+    m.mount(container, null); // cleanup
+  });
+
+  test("IT SHOULD load", () => {
+    expect(getByText(document.body, "Search...")).toBeInTheDocument();
+    expect(getByText(document.body, "Email Subject 1")).toBeInTheDocument();
+    expect(getByText(document.body, "Email Subject 10")).toBeInTheDocument();
+  })
+});
+
+/*
 test("DemoComponent renders and updates name on click", async () => {
   document.body.innerHTML = "<div id='app'></div>";
   const container = document.getElementById("app");
@@ -24,3 +44,4 @@ test("DemoComponent renders and updates name on click", async () => {
 
   m.mount(container, null); // cleanup
 });
+*/

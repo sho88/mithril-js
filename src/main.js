@@ -24,4 +24,8 @@ m.route(document.body, '/', {
     onmatch: () => import("./pages/state").then(module => bind(module.default))
   },
 
+  '/mail': {
+    onmatch: () => import("./pages/mail").then(module => bind(module.default))
+  },
+
 })
