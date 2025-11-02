@@ -7,14 +7,16 @@ const DemoComponent = {
   },
 
   view: (vnode) =>
-    m("div", { class: "demo-component" }, [
+    m("div", { className: "demo-component" }, [
       m("h2", "Demo Component"),
       m("p", `Name: ${vnode.state.name}`),
       m('button',
         {
-          onclick: () => vnode.state.name = "Mithril Updated!",
           "aria-label": "greet-button",
           "data-testid": "greet-button",
+          onclick: () => {
+            vnode.state.name = "Mithril Updated!";
+          },
         },
         "Greet"
       )

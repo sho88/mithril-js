@@ -1,6 +1,6 @@
 import { bind } from "./../../utils"
 
-import usersStyle from "./styles.module.scss"
+import usersStyle from "./styles.module.sass"
 
 
 const UsersComponent = {
