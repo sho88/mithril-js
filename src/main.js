@@ -28,4 +28,8 @@ m.route(document.body, '/', {
     onmatch: () => import("./pages/mail").then(module => bind(module.default))
   },
 
+  '/test': {
+    onmatch: () => import("./pages/test").then(module => bind(module.default))
+  },
+
 })
