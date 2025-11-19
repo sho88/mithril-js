@@ -29,7 +29,7 @@ m.route(document.body, '/', {
   },
 
   '/test': {
-    onmatch: () => import("./pages/test").then(module => bind(module.default))
+    onmatch: () => import("./pages/test").then(module => module.default)
   },
 
 })

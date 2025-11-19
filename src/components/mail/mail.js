@@ -5,7 +5,7 @@ import mailCss from "./mail.module.sass";
 const component = {
 
   oninit(vnode) {
-    vnode.state.emails = new Array(10).fill(null).map( (_, index) => ({
+    vnode.state.emails = new Array(10).fill(null).map((_, index) => ({
       id: index + 1,
       description: `This is the description for email ${index + 1}`,
       from: `john.smith@gmail.com`,
@@ -28,18 +28,17 @@ const component = {
 
   view: vnode => ([
     m("div", { className: mailCss['main'] },
-      m("input[type='text']", 
+      m("input[type='text']",
         {
           className: mailCss['main__search'],
           onkeyup: (e) => {
             const searchTerm = e.target.value
-            vnode.state.emailsFiltered = vnode.state.emails.filter(email => {
-
-              return email.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                email.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                email.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                email.to.toLowerCase().includes(searchTerm.toLowerCase())
-            });
+            vnode.state.emailsFiltered = vnode.state.emails.filter(email =>
+              email.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              email.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              email.from.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              email.to.toLowerCase().includes(searchTerm.toLowerCase())
+            );
           },
           placeholder: "Search...",
         }
@@ -47,7 +46,7 @@ const component = {
     ),
 
     m('div', { className: mailCss['email-list'] },
-      vnode.state.emailsFiltered.map( (email, index) =>
+      vnode.state.emailsFiltered.map((email, index) =>
         m('div', { key: index, className: mailCss['email'] },
           m('div', { className: mailCss['email__item'] },
             m('input[type="checkbox"]',
@@ -70,7 +69,8 @@ const component = {
               {
                 className: mailCss['email__information'],
                 onclick: () => {
-                  if (vnode.state.viewedEmails.find(selectedEmail => selectedEmail === email)) return;
+                  const emailAlreadyExists = vnode.state.selectedEmails.find(selectedEmail => selectedEmail === email);
+                  if (emailAlreadyExists) return;
 
                   vnode.state.viewedEmails = [...vnode.state.viewedEmails, email];
                 },
